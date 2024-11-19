@@ -1,13 +1,123 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1 {
+  margin-bottom: 20px;
+}
+
+.controls {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.controls input[type="file"] {
+  display: inline-block;
+  margin: 10px 5px;
+}
+
+.upload-button,
+.detect-button,
+.download-button {
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  border: none;
+  background-color: #007BFF;
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.upload-button:hover,
+.detect-button:hover,
+.download-button:hover {
+  background-color: #0056b3;
+}
+
+.canvas-container {
+  position: relative;
+  margin: 20px 0;
+}
+
+.canvas {
+  border: 1px solid #000;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto; /* Allow mouse events */
+  background-color: transparent; /* Semi-transparent white background */
+  mix-blend-mode: multiply;  
+}
+
+.color-controls {
+  margin-top: 20px;
+}
+
+.color-palette {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+  grid-gap: 10px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.color-swatch {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.2s;
+}
+
+.color-swatch:hover {
+  border: 2px solid #000; /* Highlight the selected swatch */
+}
+
+.action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.action-button {
+  padding: 10px 15px;
+  font-size: 1em;
+  cursor: pointer;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.action-button:hover {
+  background-color: #218838;
+}
+
+@media (max-width: 768px) {
+  .controls button,
+  .color-controls button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .canvas-container {
+    margin: 10px 0;
+  }
 }
